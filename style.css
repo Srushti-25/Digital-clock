@@ -1,0 +1,114 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap');
+
+.clock {
+    font-family: 'Orbitron', sans-serif;
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body,.time{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+body{
+    min-height: 100vh;
+    background: #2e2e45;
+}
+.digital-clock{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position:relative;
+    background: #2d3f38;
+    color: #fff;
+    width: 452px;
+    padding:20px 45px;
+    border-radius: 10px;
+}
+.digital-clock::before,
+.digital-clock::after{
+    content: ' ';
+    position: absolute;
+    background: conic-gradient(
+        #6c5ce7,#00cec9,#00cec9,#6c5ce7,
+        #6c5ce7);
+        height:100%;
+        width: 100%;
+        border-radius: 10px;
+        z-index: -1;
+        padding:3px;
+        animation: rotation 3s linear infinite;
+
+    
+}
+.digital-clock::after{
+    filter: blur(10px);
+}
+@keyframes rotation{
+    to{
+        --deg: 360deg;
+}
+}
+#hour{
+    font-weight: 600;
+    font-family: 'orbitron' ,sans-serif;
+    font-size: 8em;
+    line-height: 125px;
+    padding: 0 10px;
+    background: -webkit-linear-gradient(90deg, cyan, white);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+.right-side{
+    display:flex;
+    flex:content;
+    justify-content: center;
+    align-items: center;
+    position:relative;
+}
+#colon{
+    position: absolute;
+    transform: translateY(-3px);
+    font-size: 5em;
+    color:white;
+     margin: 0 -12px; 
+    
+
+}
+#minutes{
+    font-size: 5em;
+    font-weight:500;
+    font-family: 'orbitron';
+    margin-left: 10px;
+    background: -webkit-linear-gradient(90deg, rgb(250,106,0), white );
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+.right-side{
+    flex-direction: column;
+
+}
+.right-down{
+    position:relative;
+    margin-left: 10px;
+    transform: translateY(-5px);
+}
+#period, #seconds{
+    font-size:1.8em;
+    font-weight: 500;
+    margin-left: 10px;
+
+}
+#period{
+    color:rgb(250,106,251)
+}
+#hour, #minutes{
+    letter-spacing: 3px;
+}
+
